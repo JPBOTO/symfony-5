@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3 border px-0">
+	<a class="navbar-brand ps-3" href="{{path('accueil')}}">
+		<img src="{{asset('img/logo.png')}}" width="150" height="50" alt=""/>
+	</a>
+	<div class="collapse navbar-collapse ml-5 justify-content-between" id="menuprincipal">
+		<ul class="navbar-nav">
+			{%if is_granted('ROLE_USER')%}		
+				<li class="nav-item">
+					<a class="nav-link fw-bold ps-5 pe-3" href="{{path('accueil')}}">Accueil</a>
+				</li>
+			{%endif%}			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle fw-bold px-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Saisie</a>
+				<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+					
+					<li>
+						<a class="dropdown-item" href="{{path('collaborateur_index')}}">Collaborateur</a>
+					</li>
+					
+					<li>
+						<a class="dropdown-item" href="">Client</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="">Taches</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="">Exercices</a>
+					</li>
+				</ul>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link fw-bold px-3" href="">Listing</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link fw-bold ps-5 pe-3" href="{{path('user_index')}}">User</a>
+			</li>			
+			<li>
+				<a class="nav-link fw-bold px-3" href="">Paramètres</a>
+			</li>
+		</ul>
+		<form class="d-flex pe-4">
+			<input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+			<button class="btn btn-outline-success" type="submit">Rechercher</button>
+		</form>
+	</div>
+</nav>

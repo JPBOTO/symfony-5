@@ -1,0 +1,36 @@
+<div class='w80 mauto'>
+	{{ form_start(form) }}
+		
+			<fieldset class="flex mb20">
+				<label class="lab20  gras">Code:</label>
+				{{form_widget(form.code,{'attr':{'class':'form-control w80 '}}) }}
+			</fieldset>
+			<fieldset class="flex mb20">		
+				<label class="lab20  gras">Nom:</label>
+				{{form_widget(form.nom,{'attr':{'class':'form-control w80'}}) }}	
+			</fieldset>
+			<fieldset class="flex mb20">	
+				<label class="lab20  gras">Prenom:</label>
+				{{form_widget(form.prenom,{'attr':{'class':'form-control w80'}}) }}	
+			</fieldset>		
+			<fieldset class="flex mb20">		
+				<label class="lab20  gras">Téléphone:</label>
+				{{form_widget(form.telephone,{'attr':{'class':'form-control w80'}}) }}		
+			</fieldset>
+			<fieldset class="flex mb20">		
+				<label class="lab20  gras">Fonction:</label>
+				{{form_widget(form.fonction,{'attr':{'class':'form-control w80'}}) }}	
+			</fieldset>
+			<fieldset class="flex mb20">		
+				<label class="lab20  gras">Adresse:</label>
+				{{form_widget(form.adresse,{'attr':{'class':'form-control w80'}}) }}	
+			</fieldset>
+			<fieldset class="flex mb20">		
+				<label class="lab20  gras">Mail:</label>
+				{{form_widget(form.mail,{'attr':{'class':'form-control w80'}}) }}	
+			</fieldset>
+			<button class="btn btn-md btn-primary">{{ button_label|default('Save') }}</button>
+			<a class="btn btn-md btn-primary" href="{{ path('collaborateur_index') }}">Retour à la liste</a>
+			{{ include('collaborateur/_delete_form.html.twig') }}			
+	{{ form_end(form) }}
+</div>

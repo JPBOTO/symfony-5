@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Exco Avec {% endblock %}
+
+{% block body %}
+	<h1>Bienvenue sur le Planning !</h1>
+	<div class="row mt-4">
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Mes tâches</h4>
+					<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, porro.</p>
+					<a href="#" class="btn btn-primary btn-sm">Détails</a>
+					<a href="" class="btn btn-success btn-sm">Ajouter</a>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h4 class="card-title">Mes tâches</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<h2>Les prochaines échéances</h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla officia ut minima ipsam. Rerum, molestias!</p>
+	<div class="row">
+		{% include "test/shared/_assurance.html.twig" with {
+            'color': 'primary',
+            'icone': 'fas fa-truck',
+            'text': "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate reiciendis perspiciatis obcaecati, eaque minus."
+        } %}
+		{% include "test/shared/_assurance.html.twig" with {
+            'color': 'success',
+            'icone': 'fas fa-check',
+            'text': "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate reiciendis perspiciatis obcaecati, eaque minus."
+        } %}
+		{% include "test/shared/_assurance.html.twig" with {
+            'color': 'warning',
+            'icone': 'fas fa-lock',
+            'text': "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptate reiciendis perspiciatis obcaecati, eaque minus."
+        } %}
+	</div>
+{% endblock %}

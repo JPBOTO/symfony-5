@@ -1,0 +1,68 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Liste tâches
+{% endblock %}
+
+{% block body %}
+	<h4>Nouvelle tâche</h4>
+
+	{# {{ form(formView) }} #}
+
+	{{ form_start(formView) }}
+
+	{{ form_errors(formView) }}
+
+	{# {{ form_widget(formView) }} #}
+
+	{# {{ form_row(formView.tasks) }} #}
+		<div class="container mt-4"> <div class="row">
+			<div class="class col-3">
+				{{ form_label(formView.tasks) }}
+				{{ form_errors(formView.tasks) }}
+			</div>
+			<div class="class col-9">
+				{{ form_widget(formView.tasks) }}
+				{{ form_help(formView.tasks) }}
+			</div>
+		</div>
+	</div>
+
+	{# {{ form_row(formView.dueDate) }} #}
+
+	<div class="container mt-4">
+		<div class="row">
+			<div class="class col-3">
+				{{ form_label(formView.dueDate) }}
+				{{ form_errors(formView.dueDate) }}
+			</div>
+			<div class="class col-9">
+				{{ form_widget(formView.dueDate, {'attr':{'class': 'form-control'}}) }}
+				{{ form_help(formView.dueDate) }}
+			</div>
+		</div>
+	</div>
+
+	{# {{ form_row(formView.collaborateur) }} #}
+
+	<div class="container mt-4 mb-3">
+		<div class="row">
+			<div class="class col-3">
+				{{ form_label(formView.collaborateur) }}
+				{{ form_errors(formView.collaborateur) }}
+			</div>
+			<div class="class col-9">
+				{{ form_widget(formView.collaborateur) }}
+				{{ form_help(formView.collaborateur) }}
+			</div>
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary btn-sm">
+		<i class="fas fa-save"></i>
+		Créer la tâche
+	</button>
+
+	{{ form_end(formView) }}
+
+{% endblock %}

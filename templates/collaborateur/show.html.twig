@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collaborateur{% endblock %}
+
+{% block body %}
+	<div class='w70 mauto'>
+		<h1>Collaborateur</h1>
+		<label class="lab20 mb10 gras">Id:</label>
+		<span class="w80 mb10">{{collaborateur.id }}</span>
+		<label class="lab20 mb10 gras">Code:</label>
+		<span class="w80 mb10">{{collaborateur.code }}</span>
+		<label class="lab20 mb10 gras">Nom:</label>
+		<span class="w80 mb10">{{collaborateur.nom }}</span>	
+		<label class="lab20 mb10 gras">Prenom:</label>
+		<span class="w80 mb10">{{collaborateur.prenom }}</span>
+		<label class="lab20 mb10 gras">Téléphone:</label>
+		<span class="w80 mb10">{{collaborateur.telephone }}</span>	
+		<label class="lab20 mb10 gras">Fonction:</label>
+		<span class="w80 mb10">{{collaborateur.fonction }}</span>
+		<label class="lab20 mb10 gras">Adresse:</label>
+		<span class="w80 mb10">{{collaborateur.adresse |default('...')}}</span>	
+		<label class="lab20 mb10 gras">Mail:</label>
+		<span class="w80 mb10">{{collaborateur.mail }}</span>
+
+		<a class='btn btn-md btn-primary' href="{{ path('collaborateur_index') }}">Retour à la liste</a>
+		<a class='btn btn-md btn-success' href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">Modifier</a>
+		{{ include('collaborateur/_delete_form.html.twig') }}
+	</div>
+{% endblock %}

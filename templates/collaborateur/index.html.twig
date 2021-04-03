@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collaborateur index{% endblock %}
+
+{% block body %}
+    <h1>Collaborateur index</h1>
+	<a class="btn btn-md btn-primary" href="{{ path('collaborateur_new') }}">Nouveau collaborateur</a>
+	<a class="btn btn-md btn-primary" href="" onclick="window.print()">Imprimer</a>
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Fonction</th>
+                <th>Adresse</th>
+                <th>Mail</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for collaborateur in collaborateurs %}
+            <tr>
+                <td>{{ collaborateur.id }}</td>
+                <td>{{ collaborateur.code }}</td>
+                <td>{{ collaborateur.nom }}</td>
+                <td>{{ collaborateur.prenom }}</td>
+                <td>{{ collaborateur.telephone }}</td>
+                <td>{{ collaborateur.fonction }}</td>
+                <td>{{ collaborateur.adresse }}</td>
+                <td>{{ collaborateur.mail }}</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" href="{{ path('collaborateur_show', {'id': collaborateur.id}) }}">Afficher</a>
+                    <a class="btn btn-sm btn-primary" href="{{ path('collaborateur_edit', {'id': collaborateur.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucun enregistrement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    
+{% endblock %}

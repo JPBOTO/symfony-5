@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+<div class="example-wrapper">
+    <h1>Article</h1>
+    <form metho="POST" >
+        <fieldset class="flex mb20">
+            <label class="lab20">Code:</label>
+            <input class="w80" type="text" id="code" name="code" value="{{article.code}}" />
+        </fieldset>  
+        <fieldset class="flex mb20">      
+            <label  class="lab20">Designation:</label>
+            <input class="w80" type="text" id="designation" name="designation" value="{{article.designation}}" />
+        </fieldset>  
+        <fieldset class="flex mb20">         
+            <label  class="lab20">Prix Unitaire:</label>
+            <input  class="w80" type="text" id="prixUnitaire" name="prixUnitaire" value="{{article.prixUnitaire}}" />    
+        </fieldset>          
+        <input type="submit" class="btn btn-primary" value="Valider"/>            
+    </form>
+
+</div>
+{% endblock %}
